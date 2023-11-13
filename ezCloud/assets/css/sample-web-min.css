@@ -1,0 +1,24 @@
+.login-page {
+    background-image: url(/images/Frame.svg);
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+.btn-primary {
+    background-color: #114a9f !important
+}
+
+a {
+    color: #114a9f !important
+}
+
+.cc-window {
+    color: #212529;
+    background-color: #f7f7f7
+}
+
+.cc-btn {
+    color: #fff;
+    background-color: #007bff;
+    border-color: transparent
+}

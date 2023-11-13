@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      ezCloud ID - Tận dụng tối đa các dịch vụ ezCloud mang lại cho bạn
+    </title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <link
+      rel="stylesheet"
+      href="./assets/bootstrap/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/bootstrap/bootstrap-5.3.2-dist/css/bootstrap-extended.css"
+    />
+    <link rel="stylesheet" href="./assets/css/sample-component.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+
+    <style>
+      .avatar-small-thumbnail {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+
+      .toast-body {
+        font-size: 14px;
+      }
+
+      .popover-header {
+        background-color: none !important;
+      }
+
+      @media (max-height: 825px) and (max-width: 991.98px) {
+        .auth-wrapper > .auth-inner {
+          background-color: transparent !important;
+        }
+      }
+
+      @media (max-height: 630px) {
+        .ezcloud-footer {
+          display: none;
+        }
+      }
+
+      @media (min-height: 631px) {
+        .ezcloud-footer {
+          display: block;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .ms-3 {
+          margin-left: 2px !important;
+        }
+
+        .m-2 {
+          margin: 0.2rem !important;
+        }
+
+        .px-2 {
+          padding: 0.5rem !important;
+        }
+
+        .menu-open > .main-menu,
+        .expanded {
+          width: 300px !important;
+        }
+
+        .menu-open > .main-menu {
+          top: 0px !important;
+        }
+
+        .mobile-title {
+          margin-top: 0px !important;
+          display: block;
+          background: none !important;
+        }
+
+        .mobile-close-button {
+          cursor: pointer;
+        }
+      }
+
+      @media (min-width: 767.98px) {
+        .expanded {
+          width: 20em !important;
+        }
+
+        .mobile-title {
+          display: none;
+        }
+      }
+
+      .form-label,
+      .form-control,
+      .card-text {
+        font-size: 14px !important;
+      }
+
+      .card-title {
+        font-size: 24px !important;
+      }
+
+      .container {
+        max-width: none !important;
+      }
+
+      .home-nav {
+        margin: 0 !important;
+      }
+
+      .ezcloud-footer-a {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px !important;
+        color: #efefef !important;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .ezcloud-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px !important;
+        text-align: center;
+        color: #efefef !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      style="
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+          ),
+          linear-gradient(
+            125.92deg,
+            #020c59 9.05%,
+            #04115d 28.03%,
+            #091f6a 49.85%,
+            #11367f 72.97%,
+            #1a4f96 100%
+          );
+      "
+    >
+      <div class="content-wrapper login-page">
+        <div class="content-header row"></div>
+        <div class="content-body">
+          <div class="auth-wrapper auth-basic px-2">
+            <div class="auth-inner my-2">
+              <div class="card mb-0">
+                <div class="card-body">
+                  <input
+                    type="hidden"
+                    id="ReturnUrl"
+                    name="ReturnUrl"
+                    value="/"
+                  />
+                  <a href="#" class="brand-logo">
+                    <img src="./assets/images/ezCloud3.svg" alt="logo" />
+                  </a>
+                  <h4 class="card-title mb-1 d-flex justify-content-center font-weight-bold">
+                    Đăng nhập
+                  </h4>
+                  <p class="card-text mb-2"></p>
+                  <form action="" method="post" class="auth-login-form mt-2">
+                    <div class="mb-1">
+                      <label for="input-username" class="form-label"
+                        >Email</label
+                      >
+                      <input
+                        type="text"
+                        name="Username"
+                        id="input-username"
+                        class="form-control"
+                        tabindex="1"
+                        placeholder="Email"
+                        aria-label="Username"
+                        aria-describedby="input-username"
+                        autofocus
+                        required
+                      />
+                    </div>
+
+                    <div class="mb-1">
+                      <div class="d-flex justify-content-between">
+                        <label for="login-password" class="form-label"
+                          >Mật khẩu</label
+                        >
+                        <a href="#">Quên mật khẩu</a>
+                      </div>
+                      <div
+                        class="input-group input-group-merge form-password-toggle"
+                      >
+                        <input
+                          type="password"
+                          name="Password"
+                          id="login-password"
+                          class="form-control form-control-merge"
+                          tabindex="2"
+                          placeholder="Mật khẩu"
+                          aria-label="Password"
+                          aria-describedby="input-password"
+                          autocomplete="off"
+                          required
+                        />
+                        <span class="input-group-text cursor-pointer"
+                          ><i data-feather="eye"></i
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="mb-1">
+                      <div class="form-check">
+                        <label for="remember-me" class="form-check-label"
+                          >Nhớ đăng nhập</label
+                        >
+                        <input
+                          type="checkbox"
+                          id="remember-me"
+                          name="RememberLogin"
+                          class="form-check-input"
+                          tabindex="3"
+                          required="The RememberLogin field is required."
+                          checked
+                        />
+                      </div>
+                    </div>
+                    <button
+                      type="submit"
+                      class="btn btn-primary w-100 waves-effect waves-float waves-light"
+                      tabindex="4"
+                    >
+                      Đăng nhập
+                    </button>
+                  </form>
+                  <p class="text-center mt-2">
+                    <a href="#">
+                      <span>Đăng ký</span>
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="mb-1 d-flex justify-content-start">
+                <div class="">
+                  <form
+                    action=""
+                    id="selectLanguageForm"
+                    class="form-inline justify-content-end"
+                    role="form"
+                  >
+                    <div class="btn-group">
+                      <button
+                        class="btn btn-outline-secondary dropdown-toggle waves-effect"
+                        style="border: none !important"
+                        aria-expanded="false"
+                      >
+                        <i class="ficon" data-feather="globe"></i> Ti&#x1EBF;ng Vi&#x1EC7;t
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <a
+                          class="dropdown-item"
+                          onclick="selectLang('vi')"
+                          href="#"
+                          data-language="vi"
+                          ><i class="flag-icon flag-icon-vn"></i> Ti&#x1EBF;ng
+                          Vi&#x1EC7;t
+                        </a>
+                        <a
+                          class="dropdown-item"
+                          onclick="selectLang('en')"
+                          href="#"
+                          data-language="en"
+                          ><i class="flag-icon flag-icon-us"></i> English
+                        </a>
+                        <input
+                          type="hidden"
+                          name="culture"
+                          id="cultureSelect"
+                        />
+                      </div>
+                    </div>
+                    <input type="hidden" name="__RequestVerificationToken" />
+                  </form>
+                </div>
+
+                <div
+                  class="d-flex align-items-center justify-content-end"
+                  style="width: 100%"
+                >
+                  Trợ giúp&nbsp;-&nbsp;<a
+                    href="#"
+                    style="color: rgb(110, 107, 123) !important"
+                    onclick="ShowTermsAndConditions2()"
+                    >Điều khoản sử dụng</a
+                  >
+                </div>
+              </div>
+              <div class="modal" id="mterms" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Điều khoản sử dụng dịch vụ</h5>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        Trước khi xác nhận Đăng ký tài khoản để sử dụng dịch vụ,
+                        Quý Khách hàng cam kết đã đọc và đồng ý với các nội dung
+                        sau: <br /><br />
+                        1. Chia sẻ thông tin trong phạm vi yêu cầu của phần mềm,
+                        ezCloud chỉ sử dụng các thông tin này với các mục đích
+                        liên quan đến phần mềm<br /><br />
+                        2. Đồng ý sử dụng dịch vụ do ezCloud cung cấp và đã hoàn
+                        thành nghĩa vụ thanh toán theo Hợp đồng ký kết giữa hai
+                        Bên.<br /><br />
+                        3. Mọi thắc mắc liên quan đến sử dụng phần mềm , Quý
+                        Khách hàng vui lòng liên hệ qua các kênh sau: Hotline:
+                        1900 6159; Email: hotro@ezcloud.vn.
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-dismiss="modal"
+                      >
+                        Đóng
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ezcloud-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="footer-copyright">
+                <p>
+                  Bản quyền © 2013 - 2022 Công ty TNHH Công nghệ ezCloud Toàn
+                  Cầu
+                </p>
+                <p>
+                  Tầng 8, Tòa nhà LADECO, 266 Đội Cấn, Ba Đình, Hà Nội, Việt Nam
+                  <a class="ezcloud-footer-a" href="mailto:hotro@ezcloud.vn"
+                    ><img src="./assets/images/email.svg" /> hotro@ezcloud.vn</a
+                  >
+                  <a class="ezcloud-footer-a" href="tel:19006159"
+                    ><img src="./assets/images/phone.svg" /> 19006159</a
+                  >
+                </p>
+                <p>
+                  <a
+                    class="ezcloud-footer-a"
+                    target="_blank"
+                    href="https://ezcloud.vn"
+                    ><img src="./assets/images/cloud.svg" /></a
+                  ><a
+                    class="ezcloud-footer-a"
+                    target="_blank"
+                    href="https://www.facebook.com/ezcloudjsc"
+                    ><img src="./assets/images/fb.svg" /></a
+                  ><a
+                    class="ezcloud-footer-a"
+                    target="_blank"
+                    href="https://www.youtube.com/channel/UCMCfL-hMUu6B5_fHjfAF1kw"
+                    ><img src="./assets/images/youtube.svg"
+                  /></a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+    <script src="./assets/bootstrap/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
