@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+
+:root {
+    --vh: 7.58px;
+    --form: 85vh;
+    /* --bar: 15vh; */
+    --footer: 15vh;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.clear {
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    color: #114a9f !important;
+}
+
+.container {
+    /* box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1); */
+    /* transition: all 0.3s ease-in-out, background 0s, color 0s, border-color 0s; */
+    max-width: 400px;
+    /* min-height: calc(var(--vh, 1vh) * 100); */
+    height: var(--form);
+}
+
+.form-title {
+    color: #5e5873;
+}
+
+.btn-login {
+    background-color: #114a9f !important;
+    font-weight: 500;
+}
+
+.btn-login:hover {
+    box-shadow: 0 8px 25px -8px #7367f0;
+}
+
+.footer {
+    height: var(--footer);
+    font-size: 14px;
+}
